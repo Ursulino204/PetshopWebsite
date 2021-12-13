@@ -1,0 +1,33 @@
+﻿@model PetshopTCM.Models.Pagamento
+@{
+    ViewBag.Title = "Pagamento";
+}
+
+<h2>Pagamento</h2>
+
+@using (Html.BeginForm("Pagamento", "Home", FormMethod.Post))
+{
+
+<fieldset>
+    <legend>CADASTRO DE PRODUTOS</legend>
+
+    <div>
+        @Html.LabelFor(m => m.cod_id_pag)
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.cod_pedido)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.metodo_pag)
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.valor_total)
+    </div>
+    <div>
+        <input type="submit" value="Realizar Pagamento" name="btnEnviar" />
+    </div>
+
+</fieldset>
+}
+
+

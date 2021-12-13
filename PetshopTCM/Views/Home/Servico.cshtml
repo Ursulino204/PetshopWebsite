@@ -1,0 +1,72 @@
+﻿@model PetshopTCM.Models.Servico
+@{
+    ViewBag.Title = "Servico";
+}
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/Content/Servico.css" />
+</head>
+
+<body>
+
+
+    @using (Html.BeginForm("CadastrarServico", "Home", FormMethod.Post))
+    { 
+
+        <fieldset>
+            <legend>CADASTRO DE SERVIÇOS</legend>
+
+            <div class="txtbox1">
+
+                <label for="">Código do Serviço</label>
+                @Html.TextBoxFor(m => m.cod_servico)
+            </div>
+
+
+            <div class="txtbox1">
+                <label for="">Descrição do Serviço</label>
+                @Html.TextBoxFor(m => m.desc_servico)
+            </div>
+
+
+            <div class="txtbox1">
+                <label for="">Status do Serviço</label>
+
+                @Html.TextBoxFor(m => m.status_servico)
+            </div>
+
+
+            <div class="txtbox1">
+                <label for="">Código do Funcionário</label>
+
+                @Html.TextBoxFor(m => m.cod_func)
+            </div>
+
+
+            <div class="txtbox1">
+                <label for="">Código do Pet</label>
+
+                @Html.TextBoxFor(m => m.cod_pet)
+            </div>
+
+
+            <div class="txtbox1">
+                <label for="">Valor do Serviço</label>
+
+                @Html.TextBoxFor(m => m.valor_servico)
+            </div>
+
+            <div class="botao">
+                <input type="submit" value="Cadastrar" name="btnEnviar" />
+            </div>
+
+
+        </fieldset>
+    }
+    </body>
+
+</html>

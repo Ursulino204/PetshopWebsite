@@ -1,0 +1,80 @@
+﻿@model PetshopTCM.Models.Servico
+@{
+    ViewBag.Title = "AlterarServico";
+}
+
+<h2>AlterarServico</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h2>Serviço</h2>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(m => m.cod_servico)
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.cod_servico)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.cod_pet)
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.cod_pet)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.cod_func)
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.cod_func)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.desc_servico)
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.desc_servico)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.status_servico)
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.status_servico)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.valor_servico)
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.valor_servico)
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2col-md-10">
+                <input type="submit" value="salvar" class="btn btn-default" />
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+

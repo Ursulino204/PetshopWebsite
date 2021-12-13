@@ -1,0 +1,71 @@
+﻿@model IEnumerable<PetshopTCM.Models.Servico>
+@{
+    ViewBag.Title = "ConsultarServico";
+}
+
+<h2>Visualizar Serviços</h2>
+<p>
+    @Html.ActionLink("Consultar novo Servico", "Servico")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(m => m.cod_servico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.desc_servico)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.cod_pet)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.cod_func)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.status_servico)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.valor_servico)
+
+        </th>
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.cod_servico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.desc_servico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.cod_pet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.cod_func)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.status_servico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.valor_servico)
+            </td>
+            <td>
+                @Html.ActionLink("Alterar", "AlterarServico", null, new { cd = item.cod_servico }, new { @class = " btn btn-primary btn-xs" })
+                @Html.ActionLink("Excluir", "delServico", null, new { cd = item.cod_servico }, new { @class = " btn btn-danger btn-xs" })
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+
+

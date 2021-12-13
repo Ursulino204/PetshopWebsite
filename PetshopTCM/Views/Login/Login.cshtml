@@ -1,0 +1,61 @@
+﻿@model PetshopTCM.Models.Usuario
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/Content/Login.css" />
+</head>
+
+<body>
+    <div class="background-fundo">
+
+    </div>
+    <div class="forms-login">
+        <div class="form">
+            <h1>4Pets</h1>
+
+            <h3>Login</h3>
+
+            @using (Html.BeginForm("VerificarUsuario", "Login", FormMethod.Post))
+
+            {
+                <div class="inputs">
+
+                    <div class="input-email">
+                        <label for="">USÚARIO</label>
+
+                        @Html.EditorFor(m => m.nome_usuario, new { htmlAttributes = new { id = "txtUsuario", senha = "txtUsuario", type = "text", @class = "input", required = "required", maxlength = "30" } })
+                        @Html.ValidationMessageFor(m => m.nome_usuario, "", new { @class = "text-danger" })
+                        <div class="linha"></div>
+
+
+                    </div>
+
+                    <div class="input-senha">
+                        <label for="">SENHA</label>
+
+                        @Html.EditorFor(m => m.senha_usuario, new { htmlAttributes = new { id = "txtSenha", senha = "txtSenha", type = "password", @class = "input", required = "required", maxlength = "20" } })
+                        @Html.ValidationMessageFor(m => m.senha_usuario, "", new { @class = "text-danger" })
+                        <div class="linha"></div>
+                    </div>
+                </div>
+
+                <a>
+                    <input type="submit" value="Entrar" style="background-color: #ffd700;" />
+                </a>
+            }
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
